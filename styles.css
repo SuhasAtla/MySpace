@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at bottom, navy 0, black 100%);
+    height: 100vh;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.space {
+    background: rgba(128, 0, 128, 0) center / 200px 200px round;
+    bottom: -500px;
+    left: -500px;
+    position: absolute;
+    right: -500px;
+    top: -500px;
+}
+
+.stars1 {
+    z-index: -1;
+    animation: space 180s ease-in-out infinite;
+    background-image:
+        radial-gradient(
+        1px 1px at 25px 5px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        1px 1px at 50px 27px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        1px 1px at 120px 20px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        1.5px 1.5px at 52px 75px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        2px 2px at 16px 121px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        2.5px 2.5px at 111px 88px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        );
+    transform: rotate(225deg);
+}
+
+.stars2 {
+    z-index: -2;
+    animation: space 270s ease-in-out infinite reverse;
+    background-image:
+        radial-gradient(
+        1px 1px at 75px 125px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        1px 1px at 102px 77px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        1.5px 1.5px at 199px 101px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        2px 2px at 23px 50px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        2.5px 2.5px at 100px 8px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        );
+    transform: rotate(121deg);
+}
+
+.stars3 {
+    z-index: -3;
+    animation: space 360s ease-in-out infinite;
+    background-image:
+        radial-gradient(
+        1px 1px at 10px 11px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        1px 1px at 137px 150px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        1.5px 1.5px at 62px 174px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        1.5px 1.5px at 175px 181px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(
+        2px 2px at 195px 97px, 
+        white, 
+        rgba(255, 255, 255, 0)
+        );
+    transform: rotate(57deg);
+}
+
+#rateBuffer {
+    color: white;
+    display: none;
+}
+
+#value, #bought_price, #position{
+    color: rgb(0, 0, 0);
+    background-color: lightsalmon;
+    font-weight: 900;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+#image > a > img{
+    border-radius: 100%;
+    height: 500px;
+    width: auto;
+    object-fit: cover;
+}
+
+#image {
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#rateNumber {
+    color: #ffffff;
+    background-color: lightgreen;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.price{ 
+
+    font-size: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+}
+
+#current_rate{
+    color: white;
+}
+
+button {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+#logo {
+    user-select: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-size: 5rem;
+    letter-spacing: 0.125rem;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+  
+    color: transparent;
+    /*   background-image: linear-gradient(90deg, #4c1980, #6840ba, #8161ed, #5a59d3, #354ab4, #4c1980); */
+    /*   background-image: linear-gradient(90deg, #ff6666, #ff219b, #ff6666); */
+    background-image: linear-gradient(
+      91.1deg,
+      rgb(57, 31, 105),
+      rgb(115, 43, 155),
+      rgb(231, 75, 184),
+      rgb(57, 31, 105)
+    );
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: move 5s linear infinite;
+  }
+
+@keyframes space {
+    40% {
+        opacity: 0.75;
+    }
+    50% {
+        opacity: 0.25;
+    }
+    60% {
+        opacity: 0.75;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes move {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: -200% center;
+    }
+  }
+  @-moz-keyframes move {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: -200% center;
+    }
+  }
+  @keyframes move {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: -200% center;
+    }
+  }
