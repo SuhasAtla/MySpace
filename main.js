@@ -17,6 +17,7 @@ function runApi() {
             console.log(response);
             document.getElementById("value").textContent = response.listings[0].price.current.value / 1e18 + " ETH";
             calculate(response.listings[0].price.current.value / 1e18);
+            holdings(response.listings[0].price.current.value / 1e18);
         })
         .catch(err => console.error(err));
 }
@@ -36,6 +37,11 @@ function getImage() {
         })
         .catch(err => console.error(err));
 
+}
+
+function holdings(value){
+    document.getElementById("atla").innerHTML = parseFloat((value * 87) / 100).toFixed(3) + " ETH";
+    document.getElementById("pai").innerHTML =  parseFloat((value * 13) / 100).toFixed(3) + " ETH";
 }
 
 function startApi(_rate) {
@@ -70,6 +76,7 @@ function startApi(_rate) {
 
 startApi(rate);
 getImage()
+
 function calculate(value){
     let bought_price = document.getElementById("bought_price").textContent.split(" ")[0] * 1;
     document.getElementById("position").textContent = parseFloat(value - bought_price).toFixed(3) + " ETH";

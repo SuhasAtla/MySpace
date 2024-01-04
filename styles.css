@@ -33,6 +33,17 @@ nav{
     gap: 30px;
 }
 
+.holdings {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 30px;
+    float: right;
+    right: 0;
+}
+
 .space {
     background: rgba(128, 0, 128, 0) center / 200px 200px round;
     bottom: -500px;
@@ -148,6 +159,16 @@ nav{
     display: none;
 }
 
+#pai, #atla{
+    color: rgb(0, 0, 0);
+    background-color: lightsalmon;
+    font-weight: 900;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 40px;
+}
+
 #value, #bought_price, #position{
     color: rgb(0, 0, 0);
     background-color: lightsalmon;
@@ -179,6 +200,17 @@ nav{
     padding: 5px 10px;
     border-radius: 10px;
     margin-right: 20px;
+}
+
+#share {
+    
+    font-size: 60px;
+    color: white;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    width: 100%;
+    gap: 20px;
 }
 
 .price{ 
