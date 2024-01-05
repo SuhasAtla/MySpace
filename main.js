@@ -15,7 +15,7 @@ function runApi() {
         .then(response => response.json())
         .then(response => {
             console.log(response);
-            document.getElementById("value").textContent = response.listings[0].price.current.value / 1e18 + " ETH";
+            document.getElementById("value").textContent = parseFloat(response.listings[0].price.current.value / 1e18).toFixed(3) + " ETH";
             calculate(response.listings[0].price.current.value / 1e18);
             holdings(response.listings[0].price.current.value / 1e18);
         })
